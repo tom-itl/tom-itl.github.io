@@ -4,7 +4,7 @@
     <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404</title>
+<title>Using thumbnails</title>
 <meta name="description" content="A dark blog theme for Jekyll.">
 
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -76,58 +76,136 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div class="container-fluid index error">
+      
+
+<div class="container-fluid single">
   <div class="row">
 
-    <div class="col-md-12 content-panel articles">
-      <h1 class="header author-header">404</h1>
+    <div itemscope itemtype="http://schema.org/Article" class="col-md-12 article">
+      
+      <div class="thumb">
+        <img itemprop="image" src="https://i.imgur.com/aRQcGSi.png" alt="Thumbnail: jekyll" />
+      </div>
+      
 
-      <div class="error-text">
-        Sorry but this page doesn't seem to exist.
+      <h1 class="header" itemprop="name">Using thumbnails</h1>
+
+      <div class="author">
+        <small><i>
+          
+          on <span itemprop="datePublished" content="2014-08-28">June 8, 2014</span>
+           under jekyll
+        </i></small>
       </div>
 
-      <div class="error-text">
-        <a href="/">Home</a> |
-        <a href="/posts/">All Posts</a> |
-        <a href="/search/">Search</a>
+      <div class="read-time">
+        <small>
+          1 minute read
+        </small>
       </div>
 
-      <p class="links">
-  <a href="https://www.twitter.com/_jacobtomlinson" target="_new"><i class="fa fa-twitter"></i></a>
-  <a href="http://carte-noire.jacobtomlinson.co.uk/" target="_new"><i class="fa fa-linkedin"></i></a>
-  
-  <a href="http://carte-noire.jacobtomlinson.co.uk/" target="_new"><i class="fa fa-google-plus"></i></a>
-  
-  <a href="https://github.com/jacobtomlinson" target="_new"><i class="fa fa-github-alt"></i></a>
-  <a href="http://carte-noire.jacobtomlinson.co.uk/" target="_new"><i class="fa fa-stack-overflow"></i></a>
-  
-  
-  <a href="/feed.xml" target="_new"><i class="fa fa-rss"></i></a>
-</p>
+      <div class="content-panel content">
 
+        
+
+        <span itemprop="articleBody"><p>Carte Noire is designed to start each article with an all-white image as a
+thumbnail. These are created by adding a <code class="language-plaintext highlighter-rouge">thumbnail</code> parameter to the article’s
+<a href="http://jekyllrb.com/docs/frontmatter/">YAML frontmatter</a>. This thumbnail parameter is processed in one of two ways,
+images specified in <code class="language-plaintext highlighter-rouge">_data/thumbnails.yml</code> or using <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>.</p>
+
+<h2 id="images">Images</h2>
+
+<p>To use your own custom images as a thumbnail you must upload them to a web available
+location (I use <a href="http://imgur.com/">Imgur</a>) and then you need to add the url to <code class="language-plaintext highlighter-rouge">_data/thumbnail.yml</code>
+with an associated keyword.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll: "http://i.imgur.com/aRQcGSi.png"
+</code></pre></div></div>
+
+<p>You then add a <code class="language-plaintext highlighter-rouge">thumbnail</code> option to the article’s frontmatter and provide the keyword
+for that thumbnail.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thumbnail: jekyll
+</code></pre></div></div>
+
+<p>This allows you to re-use thumbnails across multiple articles without having to
+specify the url each time.</p>
+
+<h2 id="font-awesome">Font Awesome</h2>
+
+<p>If jekyll can’t find a corresponding image in your <code class="language-plaintext highlighter-rouge">thumbnail.yml</code> file then it
+will assume you want to use a Font Awesome icon instead. You can find the full
+list of Font Awesome icons <a href="http://fortawesome.github.io/Font-Awesome/icons/">here</a>.</p>
+
+<p>So for example if your article is about android and you want to use the <a href="http://fortawesome.github.io/Font-Awesome/icon/android/">android icon</a>
+from font awesome you can just specify the following in your frontmatter.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thumbnail: android
+</code></pre></div></div>
+
+<p>Then in the future if you decide you want to use your own android icon you can just
+add it to <code class="language-plaintext highlighter-rouge">_data/thumbnails.yml</code> which will override it for all articles using
+the android thumbnail.</p>
+
+</span>
+
+        
+
+        
+        <div class="share">
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          <div class="addthis_sharing_toolbox"></div>
+        </div>
+        
+
+        
+        <div class="tags">
+          <small>
+          <i class="fa fa-tags"></i>
+            thumbnails, carte noire
+          </small>
+        </div>
+        
+
+      </div>
+
+      
+      <div class="content-panel feedback">
+        I <i class="fa fa-heart"></i> feedback.<br />
+        Let me know what you think of this article on twitter <a href="http://www.twitter.com/_jacobtomlinson">@_jacobtomlinson</a> or leave a comment below!
+      </div>
+      
+
+      
+      <div class="content-panel comments">
+        <div id="disqus_thread">
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+      
+
+      
 
     </div>
 
   </div>
 
-  <div class="content-panel related">
-    
-      <div class="related-header">
-        <a href="/jekyll/2015/03/23/welcome-to-carte-noir/">Suggested Article</a>
-      </div>
-      <div class="title">
-        <a href="/jekyll/2015/03/23/welcome-to-carte-noir/">Welcome to Carte Noire</a>
-      </div>
-      <div class="excerpt">
-         
-          Carte Noire is a dark blog theme for Jekyll focusing on a clear reading experience.
-         
-        <a href="/jekyll/2015/03/23/welcome-to-carte-noir/">Continue Reading</a>
-      </div>
-    
-  </div>
-
 </div>
+
+
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+function disqus_config() { this.experiment.enable_scroll_container = true; }
+var disqus_shortname = "cartenoire"; // required: replace example with your forum shortname
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
 
       </div>
     </div>
